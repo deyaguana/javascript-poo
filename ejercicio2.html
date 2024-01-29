@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar arreglos</title>
+</head>
+<body>
+    <script>
+        inicio = ['unacadena',3,9,1,10,500,1,10,true];
+
+        let arrNumb = [];
+        for (let i = 0; i < inicio.length; i++) {
+            if(typeof inicio[i] === 'number') {
+                arrNumb.push(inicio[i]);
+            }
+        }
+        function arrayOrdenado(arrNumb) {
+            for (let i = 0; i < arrNumb.length - 1; i++) {
+                for (let j = 0; j < arrNumb.length - 1 - i; j++) {
+                    if (arrNumb[j] < arrNumb[j + 1]) {
+                        let tempPos = arrNumb[j];
+                        arrNumb[j] = arrNumb[j + 1];
+                        arrNumb[j + 1] = tempPos;
+                    }
+                }
+            }
+            return arrNumb;
+        }
+        console.log("Arreglo inicial:", inicio)
+        console.log("Arreglo numérico desordenado:", arrNumb);
+        console.log("Arreglo ordenado de más a menos:", arrayOrdenado(arrNumb));
+    </script>
+</body>
+</html>

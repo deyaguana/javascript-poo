@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Fibonacci</title>
+</head>
+<body>
+    <script>
+    numeroDeElementos = parseInt(prompt("Indica hasta qué número deseas la serie Fibonacci"))
+    if (!isNaN(numeroDeElementos)) {
+        function fibonacci (numeroDeElementos) {
+        const arrFibo = [0, 1];
+        for (let i = 2; i < numeroDeElementos; i++) {
+            arrFibo.push(arrFibo[i-1]+arrFibo[i-2]);
+        }
+        return arrFibo;
+        }
+        const  serieFibonnacci = fibonacci(numeroDeElementos);
+        console.log(serieFibonnacci);
+    } else {
+        console.warn("¡Error, no es un valor numérico!");
+    }
+        
+    </script>
+</body>
+</html>
